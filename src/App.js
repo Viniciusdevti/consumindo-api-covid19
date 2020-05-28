@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import api from "./services/api";
 
-function App() {
+export default function App() {
+  const [casos, setCasos] = useState([]);
+  const [pais, setPais] = useState("BR");
+
+  const getInput = ({ target: { value } }) => {
+    setPais(value);
+    console.log(pais);
+  };
+
+  useEffect(() => {
+    api.get(`countries/${pais}/confirmed`).then((response) => {
+      setCasos(response.data);
+    });
+  }, [casos]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <span>
+      
+      <input    placeholder="escolha o país"></input>
+      <button onClick={getInput}>PESQUISAR</button>
+
+      <ul>
+        {casos.map((caso) => (
+          
+          <li key={caso.uid}>
+
+            <strong>País:</strong>
+            <p>{caso.countryRegion}</p>
+
+            <strong>Estado:</strong>
+            <p>{caso.provinceState}</p>
+
+            <strong>Casos confimados:</strong>
+            <p>{caso.confirmed}</p>
+
+            <strong>Casos ativos:</strong>
+            <p>{caso.active}</p>
+
+            <strong>Fatalidades:</strong>
+            <p>{caso.deaths}</p>
+
+          </li>
+        ))}
+      </ul>
+    </span>
   );
 }
-
-export default App;
