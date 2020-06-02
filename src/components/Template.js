@@ -4,20 +4,15 @@ import api from "../services/api";
 
 import "./styles.css";
 
-export default function Covid() {
-  const [casos, setCasos] = useState([]);
-  const [pais, setPais] = useState("BR");
-
-  useEffect(() => {
-    api.get(`countries/${pais}/confirmed`).then((response) => {
-      setCasos(response.data);
-    });
-  }, [casos, pais]);
-
+export default function Template() {
+  
+  
+ 
   return (
     <div>
-      <nav>
+      <header>
         <a href="#">DEVini </a>
+
         <ul className="menu">
           <a href="#">
             <li> Casos </li>
@@ -26,41 +21,38 @@ export default function Covid() {
             <li>Api</li>
           </a>
         </ul>
-      </nav>
-      <div className="top">
+      </header>
+      <div className="top-">
         <div className="top-h">
           <h1> CONSUMINDO UMA API DO COVID-19 </h1>
         </div>
         <div className="top-i">
           <h3>Digite a sigla de um país: </h3>
-          
-            <input
-            placeholder=" 🔎 ex: 'br' "
-            onChange={(e) => setPais(e.target.value)}
-          /> 
+
+          <input  />
         </div>
       </div>
 
       <div className="container-center">
-        {casos.map((caso) => (
-          <div key={caso.uid} className="container">
+       
+          <div className="container">
             <div className="card">
-              <div>
-                <h2> {caso.provinceState}:</h2>
+              <div className="top">
+                <h2> Paraíba:</h2>
               </div>
 
               <div className="middle">
                 <strong>Casos confimados:</strong>
-                <p>{caso.confirmed.toLocaleString()}</p>
+                <p>5555</p>
                 <strong>Casos ativos:</strong>
-                <p>{caso.active.toLocaleString()}</p>
+                <p>55555</p>
 
                 <strong>Fatalidades:</strong>
-                <p>{caso.deaths.toLocaleString()}</p>
+                <p>5555</p>
               </div>
             </div>
           </div>
-        ))}
+      
       </div>
     </div>
   );
