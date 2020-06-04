@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from "react";
-
-import api from "../services/api";
+import React from  "react";
 
 import "./styles.css";
 
-export default function Template() {
-  
-  
+export default function Covid() {
+
  
+
   return (
     <div>
-      <header>
+      <nav>
         <a href="#">DEVini </a>
-
         <ul className="menu">
           <a href="#">
             <li> Casos </li>
@@ -21,38 +18,46 @@ export default function Template() {
             <li>Api</li>
           </a>
         </ul>
-      </header>
-      <div className="top-">
+      </nav>
+
+      <div className="top">
         <div className="top-h">
           <h1> CONSUMINDO UMA API DO COVID-19 </h1>
         </div>
         <div className="top-i">
           <h3>Digite a sigla de um país: </h3>
 
-          <input  />
+          <input
+            placeholder=" 🔎 ex: 'br' "
+           
+          />
         </div>
+      </div>
+
+      <div className="title-countries">
+        <p> </p>
       </div>
 
       <div className="container-center">
        
-          <div className="container">
+          <div  className="container">
             <div className="card">
-              <div className="top">
-                <h2> Paraíba:</h2>
+              <div>
+                <h2> </h2>
               </div>
 
               <div className="middle">
-                <strong>Casos confimados:</strong>
-                <p>5555</p>
-                <strong>Casos ativos:</strong>
-                <p>55555</p>
+                <strong>Cases confimados:</strong>
+                <p>555.555</p>
+                <strong>Cases ativos:</strong>
+                <p>588.585</p>
 
                 <strong>Fatalidades:</strong>
-                <p>5555</p>
+                <p>276.888</p>
               </div>
             </div>
           </div>
-      
+
       </div>
     </div>
   );
