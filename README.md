@@ -1,5 +1,5 @@
 <h1 align="center"> 
-	 Consumindo uma API do covid 19 com React  <img src="https://github.com/Viniciusdevti/consumindo-api-covid19/blob/master/public/assets/Captura%20de%20tela%20de%202020-06-17%2017-20-13.png" width="50px"/>
+	 Consumindo uma API do covid 19 com React  <img src="https://github.com/Viniciusdevti/consumindo-api-covid19/blob/master/public/assets/Captura%20de%20tela%20de%202020-06-17%2017-20-13.png" width="500px heidth="500px"/>
 </h1>
 
 <p align="center">
@@ -36,7 +36,7 @@ Projeto realizado para consumir a    <a href="https://github.com/mathdroid/covid
 * UseState :white_check_mark:
 * UseEffect  :white_check_mark:
 
-## <img src="https://img.icons8.com/fluent/48/000000/youtube-play.png width="20px"/> Video of development.
+## 🎥 Video of development.
 
 <a href="https://www.youtube.com/watch?v=S6Cw4lmb_sw">Como foi desenvolvido.</a>
 
